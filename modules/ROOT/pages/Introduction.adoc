@@ -8,6 +8,8 @@ Empower your financial services with Vault API — a secure and versatile soluti
 
 This API documentation provides comprehensive details on integrating with Vault API for managing virtual and physical cards, among other functionalities. Here's a brief overview of the steps and operations covered in the documentation:
 
+
+
 == Account Registration
 
 [.dropdown]
@@ -123,7 +125,6 @@ This API documentation provides comprehensive details on integrating with Vault 
 7. link:https://vault-bxou.readme.io/reference/execute-offer-payment[Execute Offer Payment (do payment authorization)]
 8. link:https://vault-bxou.readme.io/reference/pay-callback[Provide information about the outcome of a payment operation]
 
-</details>
 ====
 
 == PayOut

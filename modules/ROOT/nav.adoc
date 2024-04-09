@@ -1,12 +1,10 @@
 * xref:Introduction.adoc[Introduction]
 * xref:signup.adoc[Signup]
 ** xref:Registration.adoc[Registration of a new user]
-
+** xref:confirm-phone-number.md[Confirm Phone Number]
 * xref:inline-text-formatting.adoc[]
 * xref:special-characters.adoc[]
 * xref:admonition.adoc[]
 * xref:sidebar.adoc[]
 * xref:ui-macros.adoc[]
-* Lists
-** xref:lists/ordered-list.adoc[]
-** xref:lists/unordered-list.adoc[]
+
