@@ -1,0 +1,246 @@
+= Vault API Documentation
+
+Here you will find our API documentation, that will allow you access to our solution’s toolset for virtual and physical card issuance. Using it, you will be able to issue and cancel cards, manage card status, request information about cards, accounts and products, and more.
+
+Rest assured that the entire process is designed with a strong emphasis on security. The system enforces all necessary Know Your Customer (KYC) procedures to ensure that sensitive data remains protected and does not end up where it shouldn't be.
+
+Empower your financial services with Vault API — a secure and versatile solution for managing virtual cards. Dive into the documentation to unleash the full potential of our API and elevate your financial offerings.
+
+This API documentation provides comprehensive details on integrating with Vault API for managing virtual and physical cards, among other functionalities. Here's a brief overview of the steps and operations covered in the documentation:
+
+== Account Registration
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/create-account[User registration]
+2. link:https://vault-bxou.readme.io/reference/confirm-phone-number[Phone number verification]
+3. link:https://vault-bxou.readme.io/reference/resend-code[Resend Code]
+
+====
+
+== Email Management
+
+[.dropdown]
+====
+
+
+1. link:https://vault-bxou.readme.io/reference/add-email[Add Email]
+2. link:https://vault-bxou.readme.io/reference/resend-email[Resend email]
+3. link:https://vault-bxou.readme.io/reference/confirm-email[Confirm Email]
+
+====
+
+== User Authentication
+
+[.dropdown]
+====
+1. link:https://vault-bxou.readme.io/reference/signin[SignIn]
+2. link:https://vault-bxou.readme.io/reference/signout[SignOut]
+
+====
+
+== Account Password Operations
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/resend-password[Password reset request]
+2. link:https://vault-bxou.readme.io/reference/reset-confirm-code[Confirm password reset]
+3. link:https://vault-bxou.readme.io/reference/set-new-password[Set New Password]
+4. link:https://vault-bxou.readme.io/reference/change-password[Password change]
+
+====
+
+== Feature Functionality Management
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/catalog-operations[Simplified list of operations]
+
+====
+
+== Wallet
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/create-wallets[Create Wallets]
+2. link:https://vault-bxou.readme.io/reference/get-wallets[View created wallets]
+
+====
+
+== Send
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/validate-send-coins[Validate Send Coins Request to Another Wallet]
+2. link:https://vault-bxou.readme.io/reference/get-fee[Retrieve information about the fee for sending coins]
+3. link:https://vault-bxou.readme.io/reference/send-coins[Send Coins to Another Wallet]
+
+====
+
+== Profile
+
+[.dropdown]
+====
+
+
+1. link:https://vault-bxou.readme.io/reference/update-customer-profile[Adding user information]
+2. link:https://vault-bxou.readme.io/reference/get-customer-profile[View user profile]
+3. link:https://vault-bxou.readme.io/reference/update-status-of-push-notifications[Update Status of Push Notifications]
+
+
+====
+
+== KYC
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/status[View KYC Status]
+2. link:https://vault-bxou.readme.io/reference/limits[Retrieve information about KYC (Know Your Customer) limits]
+3. link:https://vault-bxou.readme.io/reference/start[Start KYC 1]
+4. link:https://vault-bxou.readme.io/reference/finish[Finish KYC 1]
+5. link:https://vault-bxou.readme.io/reference/kyc-2-1[Upload documents for KYC 2]
+6. link:https://vault-bxou.readme.io/reference/kyc-3[KYC 3]
+
+====
+
+== PayIn
+
+[.dropdown]
+====
+
+1. link:https://vault-bxou.readme.io/reference/add-card[Add a card for PayIn]
+2. link:https://vault-bxou.readme.io/reference/add-card-billing-address[Add a billing address for the card]
+3. link:https://vault-bxou.readme.io/reference/get-available-rates-and-cards-payin[View added cards and rates]
+4. link:https://vault-bxou.readme.io/reference/get-fiat-rates[Get Fiat Rates]
+5. link:https://vault-bxou.readme.io/reference/create-offer-without-charging-customer[Create Offer Without Charging Customer]
+6. link:https://vault-bxou.readme.io/reference/update-existing-offer-without[Update Existing Offer Without Charging Customer]
+7. link:https://vault-bxou.readme.io/reference/execute-offer-payment[Execute Offer Payment (do payment authorization)]
+8. link:https://vault-bxou.readme.io/reference/pay-callback[Provide information about the outcome of a payment operation]
+
+</details>
+====
+
+== PayOut
+
+[.dropdown]
+====
+
+
+1. link:https://vault-bxou.readme.io/reference/add-card-payout[Add a card for PayOut]
+2. link:https://vault-bxou.readme.io/reference/add-card-billing-address[Add a billing address for the card]
+3. link:https://vault-bxou.readme.io/reference/get-available-rates-and-cards-payout[Get Available Rates and Cards Data for PayOut]
+4. link:https://vault-bxou.readme.io/reference/create-payout-offer[Create Payout Offer]
+5. link:https://vault-bxou.readme.io/reference/update-payout-offer[Update PayOut Offer]
+6. link:https://vault-bxou.readme.io/reference/execute-payout-offer[Execute PayOut Offer]
+
+====
+
+== Exchange
+
+[.dropdown]
+====
+
+
+1. link:https://vault-bxou.readme.io/reference/get-available-currencies-for-crypto-exchanges[Get Available Currencies for Crypto Exchanges]
+2. link:https://vault-bxou.readme.io/reference/create-offer-exchange[Create Offer Exchange]
+3. link:https://vault-bxou.readme.io/reference/update-offer-exchange[Update Offer Exchange]
+4. link:https://vault-bxou.readme.io/reference/execute-offer-exchange[Execute Offer Exchange]
+
+====
+
+== History
+
+[.dropdown]
+====
+
+
+1. link:https://vault-bxou.readme.io/reference/history-transactions[History Transactions]
+2. link:/v2/history/card/{cardId}[Get Card Operations History]
+
+====
+
+== IBAN
+
+[.dropdown]
+====
+
+
+1. link:https://api-vault.readme.io/reference/iban-request[IBAN Request]
+2. link:https://api-vault.readme.io/reference/iban-list-response[IBAN List Response]
+3. link:https://api-vault.readme.io/reference/create-client[Create Client]
+4. link:https://api-vault.readme.io/reference/cancel-iban-request[Cancel IBAN Request]
+5. link:https://api-vault.readme.io/reference/users-iban-order-address[Residential Address for IBAN Order]
+6. link:https://api-vault.readme.io/reference/get-iban-recipients[Get IBAN Recipients]
+7. link:https://api-vault.readme.io/reference/add-iban-recipient[Add IBAN Recipient]
+8. link:https://api-vault.readme.io/reference/iban-withdrawal[IBAN Withdrawal]
+9. link:https://api-vault.readme.io/reference/iban-withdrawal-data[IBAN Withdrawal Data]
+10. link:https://api-vault.readme.io/reference/delete-iban-recipient[Delete IBAN recipient]
+
+
+====
+
+== Card Program 1
+
+[.dropdown]
+====
+
+
+1. link:https://api-vault.readme.io/reference/card-list[Get Customer Cards for Program 1]
+2. link:https://api-vault.readme.io/reference/get-prices-for-card-program-1[Get Customer for Card Program 1 Prices]
+3. link:https://api-vault.readme.io/reference/create-new-card-request[Create New Card Request]
+4. link:https://api-vault.readme.io/reference/cancel-card-request-cp1[Cancel Card Request]
+5. link:https://api-vault.readme.io/reference/update-address-for-card-request-cp1[Update Address for Card Request]
+6. link:https://api-vault.readme.io/reference/additional-personal-info-cp1[Additional Personal Info]
+7. link:https://api-vault.readme.io/reference/get-additional-personal-info-cp1[Get Additional Personal Info]
+8. link:https://api-vault.readme.io/reference/create-card-order-offer-cp1[Create Card Order Offer]
+9. link:https://api-vault.readme.io/reference/pay-card-order-offer-cp1[Pay Card Order Offer]
+10. link:https://api-vault.readme.io/reference/get-card-price-for-card-program-1[Get Card Price for Card Program 1]
+11. link:https://api-vault.readme.io/reference/additional-personal-info-constants[Card Program 1 Additional Personal Info Constants]
+12. link:https://api-vault.readme.io/reference/activate-virtual-card[Activate Virtual Card]
+13. link:https://api-vault.readme.io/reference/get-limits-fees-and-other-data-for-card-payload[Get Limits, Fees, and Other Data for Card Payload]
+14. link:https://api-vault.readme.io/reference/create-card-payload-offer[Create Card Payload Offer]
+15. link:https://api-vault.readme.io/reference/update-card-payload-offer[Update Card Payload Offer]
+16. link:https://api-vault.readme.io/reference/confirm-card-payload-offer[Confirm Card Payload Offer]
+17. link:https://api-vault.readme.io/reference/send-customer-soft-unblock-sms-code[Send Customer Soft Unblock SMS Code]
+18. link:https://api-vault.readme.io/reference/soft-blocked-card-program-1[Soft Blocked Card Program 1]
+19. link:https://api-vault.readme.io/reference/send-customer-soft-block-sms-code[Send Customer Soft Block SMS Code]
+20. link:https://api-vault.readme.io/reference/customer-soft-unblock-card-program-1[Customer Soft Unblock Card Program 1]
+21. link:https://api-vault.readme.io/reference/request-verification-code-for-passcode[Request Verification Code for Passcode]
+22. link:https://api-vault.readme.io/reference/check-verification-code-for-passcode[Check Verification Code for Passcode]
+23. link:https://api-vault.readme.io/reference/set-passcode-to-card-program-1[Set Passcode to Card Program 1]
+24. link:https://api-vault.readme.io/reference/get-card-number[Get Card Number]
+25. link:https://api-vault.readme.io/reference/get-sms-code-to-show-card-details[Get SMS Code to Show Card Details]
+26. link:https://api-vault.readme.io/reference/get-card-details[Get Card Details]
+
+
+====
+
+== Card Program 2
+
+[.dropdown]
+====
+
+
+1. link:https://api-vault.readme.io/reference/get-customer-cards-for-program-2[Get Customer Cards for Program 2]
+2. link:https://api-vault.readme.io/reference/get-customer-for-card-program-2[Get Customer for Card Program 2 Prices]
+3. link:https://api-vault.readme.io/reference/create-new-card-request-cp2[Create New Card Request]
+4. link:https://api-vault.readme.io/reference/cancel-card-request-cp2[Cancel Card Request]
+5. link:https://api-vault.readme.io/reference/additional-personal-info-cp2[Additional Personal Info]
+6. link:https://api-vault.readme.io/reference/create-card-order-offer[Create Card Order Offer]
+7. link:https://api-vault.readme.io/reference/create-card-order-offer-cp2[Pay Card Order Offer]
+8. link:https://api-vault.readme.io/reference/additional-personal-cp2[Get Additional Personal Info]
+9. link:https://api-vault.readme.io/reference/update-address-for-card-request-cp2[Update Address for Card Request]
+10. link:https://api-vault.readme.io/reference/additional-personal-info-constants-cp2[Card Program 2 Additional Personal Info Constants]
+11. link:https://api-vault.readme.io/reference/get-card-price-for-card-program-2[Get Card Price for Card Program 2]
+12. link:https://api-vault.readme.io/reference/get-limits-fees-and-other-data-for-card-payload-cp2[Get Limits, Fees, and Other Data for Card Payload]
+13. link:https://api-vault.readme.io/reference/create-card-payload-offer-cp2[Create Card Payload Offer]
+14. link:https://api-vault.readme.io/reference/update-card-payload-offer-cp2[Update Card Payload Offer]
+15. link:https://api-vault.readme.io/reference/confirm-card-payload-offer-cp2[Confirm Card Payload Offer]
+
+====

@@ -1,3 +1,7 @@
+* xref:Introduction.adoc[Introduction]
+* xref:signup.adoc[Signup]
+** xref:Registration.adoc[Registration of a new user]
+
 * xref:inline-text-formatting.adoc[]
 * xref:special-characters.adoc[]
 * xref:admonition.adoc[]
