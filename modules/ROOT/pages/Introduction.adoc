@@ -161,7 +161,7 @@ This API documentation provides comprehensive details on integrating with Vault 
 
 
 1. link:https://vault-bxou.readme.io/reference/history-transactions[History Transactions]
-2. link:/v2/history/card/{cardId}[Get Card Operations History]
+2. link:https://api-vault.readme.io/reference/get-card-operations-history[Get Card Operations History]
 
 ====
 
