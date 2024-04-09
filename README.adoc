@@ -1,29 +1,49 @@
-= Demo Documentation Component A
-:url-project: https://antora.org
-:url-docs: https://docs.antora.org
-:url-org: https://gitlab.com/antora
-:url-group: {url-org}/demo
-:url-demo-site: https://antora.gitlab.io/demo/docs-site
-:url-site-readme: {url-group}/docs-site/blob/master/README.adoc
-:url-opendevise: https://opendevise.com
+= 👋Welcome to Vault API
 
-Component A is an example of a documentation component.
-It is used by the {url-demo-site}[Antora Demo site].
-The playbook and instructions for the Demo site are located in the {url-site-readme}[Demo site playbook project].
+Vault provides reliable and user-friendly tools to manage your finances. Our APIs grant access to various features such as currency exchange, card management, wallet creation, real-time currency rate retrieval, creation and updating of payout offers, and successfully executing these offers, among many other functionalities.
 
-== Resources
+== 🚀 Get Started Now!
 
-* {url-project}[Antora Project]
-* {url-docs}[Antora Docs]
-* {url-org}[Antora Repositories]
+[link="https://github.com/crypterium-com/api-vault/tree/cd6df668a91b07c5bb4ffc9fa7b9656a797c2190/Vault%20API/Signup"]
+SignUp
+Before you begin, make sure you're registered. The registration process is easy and intuitive, giving you access to all functionalities.
 
-== Copyright and License
+[link="https://github.com/crypterium-com/api-vault/tree/cd6df668a91b07c5bb4ffc9fa7b9656a797c2190/Vault%20API/Authorization"]
+Authorization
+For secure access to all API features, get your unique API key. The authentication process is simple and ensures the protection of your data.
 
-Copyright (C) 2017-present by OpenDevise Inc. and the individual contributors to Antora.
+== 🌟 Key Features
 
-Use of this software is granted under the terms of the https://www.mozilla.org/en-US/MPL/2.0/[Mozilla Public License Version 2.0] (MPL-2.0).
-See link:LICENSE[] to find the full license text.
+- *Data Security*: Vault API ensures the highest level of data security. We provide encryption mechanisms, access management, and other features to safeguard your information.
 
-== Authors
+- *Flexibility in Usage*: With our API, you gain flexibility in integrating with your application. Choose the methods and resources that align with your unique needs.
 
-Development of Antora is led and sponsored by {url-opendevise}[OpenDevise Inc].
+- *Powerful Capabilities*: Manage payments, offers, cards, and wallets with a wide range of endpoints.
+
+- *Documentation and Guides*: Our API documentation has all the necessary materials for a quick start and in-depth exploration of functionality. Step-by-step guides and examples will help you use the API with minimal effort.
+
+== 📈 Vault.ist API Sections
+
+To start using the Vault.ist API, familiarize yourself with our documentation, providing detailed information about endpoints, parameters, and example requests.
+
+- link:https://api-vault.readme.io/reference/signup[SignUp]: New User Registration
+- link:https://api-vault.readme.io/reference/authorization[Authorization]: Authentication and SignOut
+- link:https://api-vault.readme.io/reference/password-operations[Account Password Operations]: Simplified list of operations
+- link:https://api-vault.readme.io/reference/ffm[Feature Functionality Management]: Simplified list of operations
+- link:https://api-vault.readme.io/reference/wallet[Wallet]: Wallet Management and Financial Operations.
+- link:https://api-vault.readme.io/reference/send[Send]: Operations related to sending coins from one wallet to another.
+- link:https://api-vault.readme.io/reference/profile[Profile]: User Profile Management
+- link:https://api-vault.readme.io/reference/kyc[KYC]: Know Your Customer Procedures
+- link:https://api-vault.readme.io/reference/payin[PayIn]: Processing Inflow of Funds
+- link:https://api-vault.readme.io/reference/payout[PayOut]: Processing and Managing Fund Payouts
+- link:https://api-vault.readme.io/reference/exchange[Exchange]: Currency Exchange Management
+- link:https://api-vault.readme.io/reference/history[History]: Records of Wallet and Card Operations
+- link:https://api-vault.readme.io/reference/iban[IBAN]: Facilitates IBAN requests, listing IBAN recipients, managing IBAN withdrawals, and more
+- link:https://api-vault.readme.io/reference/card-program-1[Card Program 1]: Management of Card Program 1
+- link:https://api-vault.readme.io/reference/card-program-1-copy[Card Program 2]: Management of Card Program 2
+
+== 💬 Partnership and Collaboration
+
+Our team is ready to explore various collaboration options and offer you favorable conditions for a mutually beneficial partnership.
+
+If you are interested in partnership opportunities, we are always open for discussions and collaboration. Feel free to reach out to us at ❤️ mailto:andrey@vault.ist[andrey@vault.ist].
