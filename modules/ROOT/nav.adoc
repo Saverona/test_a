@@ -9,13 +9,10 @@
 ** xref:add-email.adoc[Add Email]
 ** xref:confirm-email.adoc[Confirm Email]
 
---
-
 * xref:Authorization.adoc[Authorization]
 ** xref:signin.adoc[SignIn]
 ** xref:signout.adoc[SignOut]
 
---
 
 * Help
 ** xref:inline-text-formatting.adoc[]
