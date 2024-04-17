@@ -1,17 +1,36 @@
-* xref:Introduction.adoc[Introduction]
 * xref:signup.adoc[Signup]
 ** xref:Registration.adoc[Registration of a new user]
 ** xref:confirm-phone-number.adoc[Confirm Phone Number]
 ** xref:resend-code.adoc[Resend Code]
 ** xref:add-email.adoc[Add Email]
 ** xref:confirm-email.adoc[Confirm Email]
+
 * xref:Authorization.adoc[Authorization]
 ** xref:signin.adoc[SignIn]
 ** xref:signout.adoc[SignOut]
+
+* xref:Account Password Operations.adoc[Account Password Operations]
+** xref:change-password.adoc[Change Password]
+** xref:resend-password.adoc[Resend Password]
+** xref:reset-confirm-code.adoc[Confirm Password Reset]
+** xref:Set New Password.adoc[Set New Password]
+
+* xref:ffm.adoc[Feature Functionality Management]
+
+* xref:Wallet.adoc[Wallet]
+** xref:create-wallets.adoc[Create Wallets]
+** xref:get-wallets.adoc[Get Wallets]
+
+* xref:Send.adoc[Send]
+** xref:validate-send-coins.adoc[Validate Send Coins]
+** xref:get-fee.adoc[Get Fee]
+** xref:send-coins.adoc[Send Coins]
+
+
 * Help
 ** xref:inline-text-formatting.adoc[]
 ** xref:special-characters.adoc[]
-**  xref:admonition.adoc[]
+** xref:admonition.adoc[]
 ** xref:sidebar.adoc[]
 ** xref:ui-macros.adoc[]
 

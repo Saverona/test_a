@@ -1,0 +1,3 @@
+= *Wallet*
+
+This *`Wallet`* section is designed for managing user wallets and conducting financial operations, such as creating wallets, retrieving information about wallets, sending coins, obtaining fee details, and viewing transaction history.
