@@ -1,19 +1,13 @@
 * xref:Introduction.adoc[Introduction]
-
---
-
 * xref:signup.adoc[Signup]
 ** xref:Registration.adoc[Registration of a new user]
 ** xref:confirm-phone-number.adoc[Confirm Phone Number]
 ** xref:resend-code.adoc[Resend Code]
 ** xref:add-email.adoc[Add Email]
 ** xref:confirm-email.adoc[Confirm Email]
-
 * xref:Authorization.adoc[Authorization]
 ** xref:signin.adoc[SignIn]
 ** xref:signout.adoc[SignOut]
-
-
 * Help
 ** xref:inline-text-formatting.adoc[]
 ** xref:special-characters.adoc[]
