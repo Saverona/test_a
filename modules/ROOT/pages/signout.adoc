@@ -1,0 +1,101 @@
+= *SignIn*
+
+*`POST` /signout*
+
+The endpoint is designed for user authentication and obtaining an OAuth access token. Specifically tailored for the client credentials grant type, it generates a token upon successful authentication, enabling secure requests to resources.
+
+
+== *Request*
+
+=== *Headers*
+
+
+- **X-DeviceId**: string
+This header is used for device identification during the sign-out process.
+
+
+==== **Request Sample: cURL**
+
+At the time of sending the request, the curl command should be as follows:
+
+[source,curl]
+----
+curl --request POST \
+     --url https://api.vault.sandbox.testessential.net/signout \
+     --header 'accept: application/json' \
+     --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NTU0ZDc0My05ZDExLTQ5YTEtYTMyMy03YmRmOGQ4NDdjMjEiLCJleHAiOjE3MDk3MjQ1NjQsImlhdCI6MTcwOTYzODE2NH0.deZXGfjS7oVprz2XoZseeYa7l8ti8aAJaELBeDDtglI'
+----
+
+== Responses
+
+[.collapsible]
+====
+*`200 - Success Response`*
+
+[.collapsible-content]
+
+The response indicates a successful sign-out operation.
+
+
+.**result**: string
+A string indicating the result of the sign-out process, typically providing a success message.
+
+[source,json]
+----
+{
+  "result": "ok"
+}
+----
+
+
+====
+
+[.collapsible]
+====
+*`400 - Bad Request`*
+
+The response status code indicates that the requested page was not found on the server.
+
+[.collapsible-content]
+
+.*message:* string
+Message displayed to the user.
+
+.*field:* string
+Specifies the field in the request that caused the error.
+
+.*errorId:* integer
+Identifier of the error.
+
+.*systemId:* string
+Identifier of the component.
+
+.*originalMessage:* string
+The original error message.
+
+.*errorStackTrace:* string
+The place where the error occurred in the code.
+
+.*data:* object
+Additional data related to the error, structured as key-value pairs.
+
+** **additionalProp1:** object
+** **additionalProp2:** object
+** **additionalProp3:** object
+
+.*error:* string
+Identifier of the error.
+
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+
+====

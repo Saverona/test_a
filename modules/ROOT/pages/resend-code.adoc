@@ -1,8 +1,8 @@
 = *Confirm Phone Number*
 
-*`POST` /v2/mobile/phone/confirm*
+*`POST` /v2/mobile/phone/verify/resend*
 
-This API is employed to confirm the ownership of a provided phone number during the link:https://github.com/crypterium-com/api-vault/wiki/Registration-Process[account creation process]. Users may receive a code through SMS or a similar method, and this code needs to be submitted through this API to verify the associated phone number.
+If the initial verification code for a phone number has not been received or has expired, this API allows users to request a new verification code to be sent to the provided phone number. It is a resend mechanism to ensure users can successfully complete the phone verification process.
 
 == *Request*
 
@@ -12,11 +12,19 @@ This API is employed to confirm the ownership of a provided phone number during 
 Identification of requests from users of a specific partner.
 Default: `bece038f-2e46-49f4-b25e-89cd38d6dc16`
 
+- *X-Fingerprint*: string (required)
+Indicates whether fingerprint login has been performed in the application. Fingerprint for WEB for Android and iOS can be viewed link:https://github.com/crypterium-com/api-vault/wiki/Digital-signature-verification-and-fingerprint[here].
+Default: `1234444`
+
+- *X-Signature*: string
+Contains a digital signature generated both on the server-side (backend) and the client-side (frontend). It is used for verifying the authenticity of requests. The HMAC_SHA256 algorithm is utilized to generate the signature, employing a shared secret key.
+
+
 
 === *Body*
 
 
-.Media Type: application/json
+.Media Type: `*application/json*`
 
 
 ==== *Parameters*
@@ -25,20 +33,13 @@ Default: `bece038f-2e46-49f4-b25e-89cd38d6dc16`
 - *phone*: string (*Required*)
 Telephone number, which must be specified during registration.
 
-- *smsCode*: string (*Required*)
-SMS containing the necessary code. In this case, the SMS code is always the same, and it is `1234`.
-
-- *fingerprint*: string
-Device fingerprint. Fingerprint for WEB for Android and iOS can be viewed link:https://github.com/crypterium-com/api-vault/wiki/Digital-signature-verification-and-fingerprint[here].
 
 ==== **Example body**
 
 [source,json]
 ----
 {
-  "phone": "+447871234567",
-  "smsCode": "1234",
-  "fingerprint": "12344444"
+  "phone": "+447871234567"
 }
 ----
 
@@ -49,15 +50,14 @@ At the time of sending the request, the curl command should be as follows:
 [source,curl]
 ----
 curl --request POST \
-  --url https://crpt-backend-main-service.sandbox.testessential.net/v2/mobile/phone/confirm \
+  --url https://api.vault.sandbox.testessential.net/v2/mobile/phone/verify/resend \
   --header 'Accept: application/json' \
-  --header 'Authorization: Basic ZG9jOnNlY3JldA==' \
   --header 'Content-Type: application/json' \
+  --header 'X-Fingerprint: 1234444' \
   --header 'X-Merchant-ID: bece038f-2e46-49f4-b25e-89cd38d6dc16' \
+  --header 'X-Signature: ' \
   --data '{
-  "phone": "+447871234567",
-  "smsCode": "1234",
-  "fingerprint": "12344444"
+  "phone": "+447871234567"
 }'
 ----
 
@@ -65,39 +65,22 @@ curl --request POST \
 
 [.collapsible]
 ====
-*`200 - Success Response`*
+*`200 - OK`*
 
 
 The response status code indicates that the request was successfully processed.
 
 [.collapsible-content]
 
-
-.*access_token*: string
-An encrypted key, a short-lived token for accessing a resource.
-
-.*token_type*: string
-Bearer token.
-
-.*refresh_token*: string
-These are credentials for accessing the API in the absence of a user session.
-
-.*expires_in*: integer
-Token lifetime in seconds.
-
-.*scope*: string
-token action space, we almost always have a *read write*
+.**result:** string
+Response indicating the result of the resend code operation.
 
 
 **Responses example**
 [source,json]
 ----
 {
-  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYTdiM2UzNi1jNTQ4LTQ2NjMtYWNiZi00YjAwOWMyYTExZjgiLCJleHAiOjE3MDk4MjE1MjIsImlhdCI6MTcwOTczNTEyMn0.Syx7vEDUcgEQ-pNJSjFQPh35wia3Qy-2u_GyFCSiXgk",
-  "token_type": "bearer",
-  "refresh_token": "_aUCain3dCLOF4NzSvQbXchMuns",
-  "expires_in": 86399,
-  "scope": "read write"
+  "result": "ok"
 }
 ----
 

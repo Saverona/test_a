@@ -33,7 +33,7 @@ Contains a digital signature generated both on the server-side (backend) and the
 === *Body*
 
 
-.Media Type: `*application/json*`
+.Media Type: *application/json*
 
 
 ==== *Parameters*
