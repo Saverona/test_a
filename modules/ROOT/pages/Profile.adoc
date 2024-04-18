@@ -1,0 +1,3 @@
+= Profile
+
+The `Profile` section is designed for managing customer profiles within the system. Each method in this section performs a specific operation related to the customer profile, including retrieving information, changing passwords. These operations provide clients with convenient and secure means to control their accounts and ensure compliance with regulatory requirements.

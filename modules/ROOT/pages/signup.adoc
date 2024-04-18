@@ -1,4 +1,4 @@
-== SignUp
+= SignUp
 
 The `SignUp` section in the Vault company is designed to provide functionality related to the registration of new users in the system. It offers methods that enable clients to create new user accounts, verify them, and retrieve information associated with the link:https://github.com/crypterium-com/api-vault/wiki/Registration-Process[registration process].
 

@@ -142,9 +142,9 @@ The place where the error occurred in the code.
 .*data:* object
 Additional data related to the error, structured as key-value pairs.
 
- ** **additionalProp1:** object
- ** **additionalProp2:** object
- ** **additionalProp3:** object
+** **additionalProp1:** object
+** **additionalProp2:** object
+** **additionalProp3:** object
 
 .*error:* string
 Identifier of the error.
