@@ -119,36 +119,41 @@ Provides information about the outcome of the registration operation.
 ====
 The response status code indicates that the requested page was not found on the server.
 
-[.collapsible-content]
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
 
-.*message:* string
-Message displayed to the user.
-
-.*field:* string
-Specifies the field in the request that caused the error.
-
-.*errorId:* integer
-Identifier of the error.
-
-.*systemId:* string
-Identifier of the component.
-
-.*originalMessage:* string
-The original error message.
-
-.*errorStackTrace:* string
-The place where the error occurred in the code.
-
-.*data:* object
-Additional data related to the error, structured as key-value pairs.
-
- ** **additionalProp1:** object
- ** **additionalProp2:** object
- ** **additionalProp3:** object
-
-.*error:* string
-Identifier of the error.
-
+++++
 **Responses example**
 
 [source,json]

@@ -7,35 +7,39 @@ The endpoint is intended for creating a wallet for the provided currency.
 
 In the test environment, wallet creation is only available for the following cryptocurrencies:
 
+++++
 <details>
 <summary>Cryptocurrencies</summary>
 
-- **BAT**
-- **BTC**
-- **CHO**
-- **CRPT**
-- **DAI**
-- **DAO**
-- **ETH**
-- **GALA**
-- **LINK**
-- **LTC**
-- **MANA**
-- **MAPS**
-- **MATIC**
-- **MKR**
-- **OMG**
-- **QASH**
-- **REP**
-- **SAND**
-- **SHIB**
-- **UNI**
-- **USDC**
-- **USDT**
-- **XRP**
-- **ZRX**
+<ul>
+  <li><strong>BAT</strong></li>
+  <li><strong>BTC</strong></li>
+  <li><strong>CHO</strong></li>
+  <li><strong>CRPT</strong></li>
+  <li><strong>DAI</strong></li>
+  <li><strong>DAO</strong></li>
+  <li><strong>ETH</strong></li>
+  <li><strong>GALA</strong></li>
+  <li><strong>LINK</strong></li>
+  <li><strong>LTC</strong></li>
+  <li><strong>MANA</strong></li>
+  <li><strong>MAPS</strong></li>
+  <li><strong>MATIC</strong></li>
+  <li><strong>MKR</strong></li>
+  <li><strong>OMG</strong></li>
+  <li><strong>QASH</strong></li>
+  <li><strong>REP</strong></li>
+  <li><strong>SAND</strong></li>
+  <li><strong>SHIB</strong></li>
+  <li><strong>UNI</strong></li>
+  <li><strong>USDC</strong></li>
+  <li><strong>USDT</strong></li>
+  <li><strong>XRP</strong></li>
+  <li><strong>ZRX</strong></li>
+</ul>
 
 </details>
+++++
 
 Wallet creation for other cryptocurrencies is not available in the test environment.
 
@@ -49,9 +53,13 @@ Wallet creation for other cryptocurrencies is not available in the test environm
 
 ==== *Parameters*
 
+++++
+<ul>
+  <li><strong>currencies</strong>: array of strings <span style="color:red">(Required)</span></li>
+</ul>
+<p>Currencies for which the wallet needs to be created.</p>
 
-- **currencies**: array of strings *(Required)*
-Currencies for which the wallet needs to be created.
+++++
 
 
 ==== **Example body**
@@ -91,137 +99,166 @@ curl --request POST \
 
 == Responses
 
-[.collapsible]
+.*`201 - Created`*
+[%collapsible.201]
 ====
-*`201 - Created`*
-
 The response status code indicates that the request was successfully processed.
 
 [.collapsible-content]
+++++
+<h4>wallets</h4>
+<ul>
+  <li><strong>id</strong>: integer<br>
+    Wallet identifier in Vault.
+  </li>
+  <li><strong>name</strong>: string<br>
+    Name of the currency being created.
+  </li>
+  <li><strong>externalId</strong>: string<br>
+    External identifier of the wallet in Vault.
+  </li>
+  <li><strong>address</strong>: string<br>
+    Blockchain network address of a specific coin.
+  </li>
+  <li><strong>currency</strong>: string<br>
+    Currency of the wallet.
+    Example: BTC, ETH, LTC etc.
+  </li>
+  <li><strong>baseCurrency</strong>: string<br>
+    Base currency of the wallet.
+  </li>
+  <li><strong>pattern</strong>: string<br>
+    Wallet pattern.
+  </li>
+  <li><strong>balance</strong>: integer<br>
+    Current balance of the wallet.
+  </li>
+  <li><strong>limits</strong>: object<br>
+    Wallet limits.
+    <ul>
+      <li><strong>additionalProp1</strong>: object<br>
+        A limit on some operation is imposed on a specific wallet.
+        <ul>
+          <li><strong>min</strong>: integer<br>
+            Minimum limit.
+          </li>
+          <li><strong>all</strong>: integer<br>
+            Overall limit.
+          </li>
+        </ul>
+      </li>
+      <li><strong>additionalProp2</strong>: object<br>
+        A limit on some operation is imposed on a specific wallet.
+        <ul>
+          <li><strong>min</strong>: integer<br>
+            Minimum limit.
+          </li>
+          <li><strong>all</strong>: integer<br>
+            Overall limit.
+          </li>
+        </ul>
+      </li>
+      <li><strong>additionalProp3</strong>: object<br>
+        A limit on some operation is imposed on a specific wallet.
+        <ul>
+          <li><strong>min</strong>: integer<br>
+            Minimum limit.
+          </li>
+          <li><strong>all</strong>: integer<br>
+            Overall limit.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>balanceString</strong>: string<br>
+    String representation of the balance.
+  </li>
+  <li><strong>availableBalance</strong>: integer<br>
+    Balance that is currently available to the user.
+  </li>
+  <li><strong>customerId</strong>: integer<br>
+    Identifier of the customer associated with the wallet.
+  </li>
+  <li><strong>createdAt</strong>: string&lt;date-time&gt;<br>
+    Wallet creation date.
+    Match pattern: YYYY-MM-DDThh:mm:ss&lt;TZDSuffix&gt;
+  </li>
+  <li><strong>isDebit</strong>: boolean<br>
+    Flag indicating whether the wallet is a debit wallet.
+    Default: true
+  </li>
+  <li><strong>allowOperations</strong>: array[string]<br>
+    Specifies the allowed operations with the wallet.
+  </li>
+  <li><strong>color</strong>: string<br>
+    Color code associated with the wallet.
+  </li>
+  <li><strong>fiat</strong>: object<br>
+    Fiat wallet representation.
+    <ul>
+      <li><strong>customerCurrency</strong>: string<br>
+        ID, which is stored in the database.
+      </li>
+      <li><strong>amount</strong>: integer<br>
+        A variable that indicates a specific value in rubles.
+      </li>
+      <li><strong>change</strong>: integer<br>
+        A variable that displays changes as a percentage (what happened to the wallet during the day) in fiat currency.
+      </li>
+      <li><strong>changePercent</strong>: integer<br>
+        In percentage.
+      </li>
+      <li><strong>rate</strong>: integer<br>
+        Cryptocurrency to customerCurrency conversion rate.
+      </li>
+    </ul>
+  </li>
+  <li><strong>scale</strong>: integer<br>
+    A variable that specifies where the comma appears in a number.
+  </li>
+  <li><strong>stub</strong>: boolean<br>
+    Indication of a stub or real wallet.
+    Default: true
+  </li>
+  <li><strong>walletCreationState</strong>: string<br>
+    The variable is intended to display the status of the wallet.
+    Allowed values:
+    <ul>
+      <li><strong>Ready</strong>: Status means that a real address has been received and the wallet is ready for use.</li>
+      <li><strong>New</strong>: Status means that the wallet has just been created.</li>
+      <li><strong>Getting</strong>: Status means that the wallet is in the process of receiving a real address.</li>
+    </ul>
+  </li>
+  <li><strong>iconUrl</strong>: string<br>
+    Link to wallet icon.
+  </li>
+  <li><strong>network</strong>: string<br>
+    Token network.
+  </li>
+  <li><strong>fiat</strong>: object<br>
+    Information about user's fiat funds.
+    <ul>
+      <li><strong>customerCurrency</strong>: string<br>
+        ID, which is stored in the database.
+      </li>
+      <li><strong>amount</strong>: integer<br>
+        Amount of fiat funds in customerCurrency.
+      </li>
+      <li><strong>change</strong>: integer<br>
+        A variable that displays changes as a percentage (what happened to the wallet during the day).
+      </li>
+      <li><strong>changePercent</strong>: integer<br>
+        Change percentage in fiat currency.
+      </li>
+      <li><strong>rate</strong>: integer<br>
+        Exchange rate.
+      </li>
+    </ul>
+  </li>
+</ul>
 
-
-.*wallets*
-array[object]
-list of created wallets with detailed information for each.
-
-* *id*: integer
-wallet identifier in Vault.
-
-* *name*: string
-name of the currency being created.
-
-* *externalId*: string
-external identifier of the wallet in Vault.
-
-* *address*: string
-blockchain network address of a specific coin.
-
-* *currency*: string
-currency of the wallet.
-Example: BTC, ETH, LTC etc.
-
-* *baseCurrency*: string
-base currency of the wallet.
-
-* *pattern*: string
-wallet pattern.
-
-* *balance*: integer
-current balance of the wallet.
-
-* *limits*: object
-wallet limits.
-
-** **additionalProp1**: object
-a limit on some operation is imposed on a specific wallet.
-
-** **additionalProp2**: object
-a limit on some operation is imposed on a specific wallet.
-
-** **additionalProp3**: object
-a limit on some operation is imposed on a specific wallet.
-
-* *balanceString*: string
-string representation of the balance.
-
-* *availableBalance*: integer
-balance that is currently available to the user.
-
-* *customerId*: integer
-identifier of the customer associated with the wallet.
-
-* *createdAt*: string<date-time>
-date and time of wallet creation.
-Match pattern: YYYY-MM-DDThh:mm:ss<TZDSuffix>
-
-* *isDebit*: boolean
-flag indicating whether the wallet is a debit wallet.
-Default: true
-
-* *allowOperations*: array[string]
-specifies the allowed operations with the wallet.
-
-* *color*: string
-color code associated with the wallet.
-
-* *fiat*: object
-information about the wallet in fiat currency.
-
-** **customerCurrency**: string
-customer's currency.
-
-** **amount**: integer
-a variable that indicates a specific value in rubles.
-
-** **change**: integer
-a variable that displays changes as a percentage (what happened to the wallet during the day) in fiat currency.
-
-** **changePercent**: integer
-in percentage.
-
-** **rate**: integer
-cryptocurrency to customerCurrency conversion rate.
-
-
-* *scale*: integer
-a variable that specifies where the comma appears in a number.
-
-* *stub*: boolean
-indication of a stub or real wallet.
-Default: true
-
-* *walletCreationState*: string
-the variable is intended to display the status of the wallet.
-Allowed values:
-- *Ready*: Status means that a real address has been received and the wallet is ready for use.
-- *New*: Status means that the wallet has just been created.
-- *Getting*: Status means that the wallet is in the process of receiving a real address.
-
-* *iconUrl*: string
-link to wallet icon.
-
-* *network*: string
-wallet network.
-
-.*fiat*: object
-information about user fiat funds.
-
-* *customerCurrency*: string
-id, which is stored in the database.
-
-* *amount*: integer
-a variable that indicates a specific value in customerCurrency.
-
-* *change*: integer
-a variable that displays changes as a percentage (what happened to the wallet during the day).
-
-* *changePercent*: integer
-change percentage in fiat currency.
-
-* *rate*: integer
-exchange rate.
-
-
+++++
 
 **Responses example**
 [source,json]
@@ -389,44 +426,47 @@ exchange rate.
   ]
 }
 ----
-
 ====
 
-[.collapsible]
+.*`400 - Bad Request`*
+[%collapsible.400]
 ====
-*`400 - Bad Request`*
-
 The response status code indicates that the requested page was not found on the server.
 
-[.collapsible-content]
-
-.*message:* string
-Message displayed to the user.
-
-.*field:* string
-Specifies the field in the request that caused the error.
-
-.*errorId:* integer
-Identifier of the error.
-
-.*systemId:* string
-Identifier of the component.
-
-.*originalMessage:* string
-The original error message.
-
-.*errorStackTrace:* string
-The place where the error occurred in the code.
-
-.*data:* object
-Additional data related to the error, structured as key-value pairs.
-
-** **additionalProp1:** object
-** **additionalProp2:** object
-** **additionalProp3:** object
-
-.*error:* string
-Identifier of the error.
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+++++
 
 **Responses example**
 

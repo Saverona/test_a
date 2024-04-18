@@ -76,7 +76,20 @@ If a user's field with information is not filled (meaning it has a NULL value), 
 [source,json]
 ----
 {
-"result": "ok"
+  "email": "test@gmail.com",
+  "confirmedEmail": false,
+  "phone": "447871236669",
+  "firstName": "Anna",
+  "lastName": "Schmidt",
+  "primaryCurrency": "EUR",
+  "residenceCountry": "DE",
+  "residenceCity": "Munich",
+  "residenceStreet": "Examplestrasse",
+  "residenceZipCode": "12345",
+  "pushEnabled": true,
+  "enabled2FA": false,
+  "dateOfBirth": "1990-05-20T00:00:00",
+  "veroId": "423db895-a10d-4114-a457-ad9291ea34cb"
 }
 ----
 ====

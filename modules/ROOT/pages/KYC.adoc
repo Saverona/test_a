@@ -1,0 +1,54 @@
+= KYC
+
+The `KYC` (Know Your Customer) section comprises a set of endpoints designed for conducting customer identification procedures in accordance with established standards and regulations.
+
+[NOTE]
+====
+*Vault offers distinct features categorized based on different KYC levels*
+====
+
+== PAYIN_CARD
+
+For customers with `KYC_0` level, the *PAYIN_CARD* functionality enables processing payments via credit cards. This functionality includes the ability to obtain fiat exchange rates, data on available payment cards, add new cards, manage billing addresses, and create/update offers without charging the customer.
+
+Allowed Endpoints:
+
+- Get fiat rates: link:https://api-vault.readme.io/reference/get-fiat-rates[GET /v3/payin/fiat-rates]
+- Get available rates and cards data for pay in: link:https://api-vault.readme.io/reference/get-available-rates-and-cards-payin[GET /v3/payin/data]
+- Add new card: link:https://api-vault.readme.io/reference/add-card[POST /v3/payin/card]
+- Add card billing address: link:https://api-vault.readme.io/reference/add-card-billing-address[POST /v3/payin/card/{cardId}/billing-address]
+- Create an offer without charging customer: link:https://api-vault.readme.io/reference/create-offer-without-charging-customer[POST /v3/payin/offer]
+- Update existing offer without charging customer: link:https://api-vault.readme.io/reference/update-existing-offer-without[PUT /v3/payin/offer/{offerId}]
+
+For customers with `KYC_1` level, additional functionalities are available:
+
+- Execute offer payment (do payment authorization) link:https://api-vault.readme.io/reference/execute-offer-payment[POST /v3/payin/pay/{offerId}]
+- Pay callback link:https://api-vault.readme.io/reference/pay-callback[GET /v3/payin/pay-callback]
+
+== PAYIN_CRYPTO
+
+For customers with `KYC_0`, *PAYIN_CRYPTO* features are available, allowing them to make payments using cryptocurrencies. Specific endpoints are not mentioned, but users can seamlessly make cryptocurrency payments.
+
+== PAYOUT_CARD
+
+For customers with `KYC_0` level, the following *PAYOUT_CARD* functions are available:
+
+- Get available rates and cards data for payout: link:https://api-vault.readme.io/reference/get-available-rates-and-cards-payout[GET /v4/payout/data]
+- Add a new card: link:https://api-vault.readme.io/reference/add-card-payout[POST /v4/payout/card]
+- Create a payout offer: link:https://api-vault.readme.io/reference/create-payout-offer[POST /v4/payout/offer]
+- Update a payout offer: link:https://api-vault.readme.io/reference/update-payout-offer[PUT /v4/payout/offer/{offerId}]
+
+For customers with `KYC_1` level, additional functionalities are available:
+
+- Execute a payout offer link:https://api-vault.readme.io/reference/execute-payout-offer[POST /v4/payout/pay/{offerId}]
+
+== EXCHANGE
+
+For customers with `KYC_0`, they can participate in currency exchange using the EXCHANGE features. The provided endpoints offer various operations related to mobile and online currency exchange.
+
+Allowed Endpoints:
+
+- Create an offer: link:https://api-vault.readme.io/reference/create-offer-exchange[POST /v1/mobile/exchange/offer]
+- Update an offer: link:https://api-vault.readme.io/reference/update-offer-exchange[PUT /v1/mobile/exchange/offer]
+- Execute an offer: link:https://api-vault.readme.io/reference/execute-offer-exchange[PUT /v1/mobile/exchange/offer/{offerId}]
+- Get available currencies for crypto exchanges: link:https://api-vault.readme.io/reference/get-available-currencies-for-crypto-exchanges[GET /v2/exchange/currencies]

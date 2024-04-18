@@ -1,0 +1,170 @@
+= *Status*
+
+*`GET` /v2/customer/kyc/data*
+
+The endpoint is intended to retrieve Know Your Customer (KYC) data for a customer. KYC is the process of verifying a customer's identity in accordance with established standards and regulations.
+
+== Responses
+
+.*`200 - OK`*
+[%collapsible.200]
+====
+A successful request to obtain customer data within the KYC (Know Your Customer) process.
+
+[.collapsible-content]
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>kycLevel</strong>: string<br>
+    Indicates the current KYC level of the customer.<br>
+    <strong>Example</strong>: NONE (no KYC completed), KYC1, KYC2, KYC3
+  </li>
+  <li><strong>kyc1ClientData</strong>: object<br>
+    KYC Level 1 data for the customer.
+    <ul>
+      <li><strong>status</strong>: string<br>
+        Status of KYC Level 1.<br>
+        <strong>Allowed values</strong>:
+        <ul>
+          <li>APPROVED: This status indicates that the verification has been successfully completed, and all client data meets the established requirements.</li>
+          <li>UNDEFINED: This status indicates that the client's status is not defined or is unknown for some reason. It could be a temporary state when the information has not yet been received or is being processed.</li>
+          <li>UNDER_REVIEW: This status indicates that the data has been submitted for verification, but the process is not yet completed. This could be related to the need for additional verification or confirmation of data.</li>
+          <li>DENIED: This status indicates client rejection. It means that the client's data does not meet the requirements or has been rejected for some other reason.</li>
+        </ul>
+      </li>
+      <li><strong>reason</strong>: string<br>
+        Reason for rejection if the status is DENIED. This is an internal rejection code.
+      </li>
+      <li><strong>rejectFormattedMessage</strong>: string<br>
+        Message explaining the reason for rejection, intended for display on the frontend.
+      </li>
+    </ul>
+  </li>
+  <li><strong>kyc2ClientData</strong>: object<br>
+    KYC Level 2 data for the customer.
+    <ul>
+      <li>Same structure as <strong>kyc1ClientData</strong></li>
+    </ul>
+  </li>
+  <li><strong>kyc3ClientData</strong>: object<br>
+    KYC Level 3 data for the customer.
+    <ul>
+      <li>Same structure as <strong>kyc1ClientData</strong></li>
+    </ul>
+  </li>
+  <li><strong>daysToExpireKyc</strong>: integer<br>
+    Specifies the number of days until KYC1 expires. This is applicable only to KYC1.
+  </li>
+  <li><strong>remainingAmount</strong>: object<br>
+    Information about the remaining funds in the client's account.
+    <ul>
+      <li><strong>value</strong>: integer<br>
+        The value of the remaining amount.
+      </li>
+      <li><strong>currency</strong>: string<br>
+        The currency of the amount.
+      </li>
+    </ul>
+  </li>
+  <li><strong>blockedAmount</strong>: object<br>
+    Information about the funds blocked in the client's account.
+    <ul>
+      <li><strong>value</strong>: integer<br>
+        Value of the blocked amount.
+      </li>
+      <li><strong>currency</strong>: string<br>
+        Currency of the blocked amount.
+      </li>
+    </ul>
+  </li>
+</ul>
+
+++++
+
+**Responses example**
+[source,json]
+----
+{
+  "kycLevel": "KYC_1",
+  "blockedAmount": {
+    "value": 0,
+    "currency": "EUR"
+  },
+  "kyc1ClientData": {
+    "reason": null,
+    "status": "APPROVED",
+    "rejectFormattedMessage": null
+  },
+  "kyc2ClientData": {
+    "reason": null,
+    "status": "UNDEFINED",
+    "rejectFormattedMessage": null
+  },
+  "kyc3ClientData": {
+    "reason": null,
+    "status": "UNDEFINED",
+    "rejectFormattedMessage": null
+  },
+  "daysToExpireKyc": 1207,
+  "remainingAmount": {
+    "value": 9599.18,
+    "currency": "EUR"
+  }
+}
+----
+====
+
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
+The response status code indicates that the requested page was not found on the server.
+
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+++++
+
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+
+====
+

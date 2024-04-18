@@ -1,0 +1,165 @@
+= *Limits*
+
+*`GET` /v1/kyc/limits*
+
+The endpoint is designed to retrieve information about KYC (Know Your Customer) limits. KYC limits typically define the maximum values or thresholds associated with different KYC levels.
+
+== Responses
+
+.*`200 - OK`*
+[%collapsible.200]
+====
+
+Successful execution of the request to obtain information about KYC limits. This indicates that the server has successfully processed the request, and the returned data contains information about KYC limits.
+
+[.collapsible-content]
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>kycNoneLimit:</strong> object<br>
+    KYC limit associated with the absence of a specific KYC level.<br>
+    <ul>
+      <li><strong>value:</strong> integer<br>
+        The maximum value or threshold for KYC None.
+      </li>
+      <li><strong>currency:</strong> string<br>
+        The currency in which the KYC None limit is defined.
+      </li>
+    </ul>
+  </li>
+  <li><strong>kyc0Limit:</strong> object<br>
+    KYC limit associated with KYC Level 0.<br>
+    <ul>
+      <li><strong>value:</strong> integer<br>
+        The maximum value or threshold for KYC 0.
+      </li>
+      <li><strong>currency:</strong> string<br>
+        The currency in which the KYC Level 0 limit is defined.
+      </li>
+    </ul>
+  </li>
+  <li><strong>kyc1Limit:</strong> object<br>
+    KYC limit associated with KYC Level 1.<br>
+    <ul>
+      <li><strong>value:</strong> integer<br>
+        The maximum value or threshold for KYC 1.<br>
+        Default: 9700
+      </li>
+      <li><strong>currency:</strong> string<br>
+        The currency in which the KYC Level 1 limit is defined.
+      </li>
+    </ul>
+  </li>
+  <li><strong>kyc2Limit:</strong> object<br>
+    KYC limit associated with KYC Level 2.<br>
+    <ul>
+      <li><strong>value:</strong> integer<br>
+        The maximum value or threshold for KYC 2.<br>
+        Default: 15000
+      </li>
+      <li><strong>currency:</strong> string<br>
+        The currency in which the KYC Level 2 limit is defined.
+      </li>
+    </ul>
+  </li>
+  <li><strong>kyc3Limit:</strong> object<br>
+    KYC limit associated with KYC Level 3.<br>
+    <ul>
+      <li><strong>value:</strong> integer<br>
+        The maximum value or threshold for KYC 3.<br>
+        Default: 32000
+      </li>
+      <li><strong>currency:</strong> string<br>
+        The currency in which the KYC Level 3 limit is defined.
+      </li>
+    </ul>
+  </li>
+</ul>
+++++
+
+**Responses example**
+[source,json]
+----
+{
+  "kyc0Limit": {
+    "value": 0,
+    "currency": "EUR"
+  },
+  "kyc1Limit": {
+    "value": 9700,
+    "currency": "EUR"
+  },
+  "kyc2Limit": {
+    "value": 15000,
+    "currency": "EUR"
+  },
+  "kyc3Limit": {
+    "value": 32000,
+    "currency": "EUR"
+  },
+  "kycNoneLimit": {
+    "value": 0,
+    "currency": "EUR"
+  }
+}
+----
+====
+
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
+The response status code indicates that the requested page was not found on the server.
+
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+
+
+
+
+++++
+
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+
+====
+

@@ -26,6 +26,18 @@
 ** xref:get-fee.adoc[Get Fee]
 ** xref:send-coins.adoc[Send Coins]
 
+* xref:Profile.adoc[Profile]
+** xref:get-current-customer.adoc[Get Current Customer Profile]
+** xref:update-customer-profile.adoc[Update Customer Profile]
+** xref:update-status.adoc[Update Status of Push Notifications]
+** xref:resend-email.adoc[Resend Email]
+
+* xref:KYC.adoc[KYC]
+** KYC 1
+*** xref:start.adoc[Start]
+*** xref:finish.adoc[Finish]
+** xref:KYC 2.adoc[KYC 2]
+** xref:КУС 3.adoc[KYC 3]
 
 * Help
 ** xref:inline-text-formatting.adoc[]

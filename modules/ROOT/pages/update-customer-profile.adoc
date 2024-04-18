@@ -1,0 +1,160 @@
+= *Update Customer Profile*
+
+*`PATCH` /v2/customer/profile*
+
+The endpoint is designed to update a customer's profile in the system.
+
+== *Request*
+
+=== *Body*
+
+
+.Media Type: *application/json*
+
+
+==== *Parameters*
+
+
+++++
+<ul>
+  <li><strong>firstName</strong>: string<br>
+    A string representing the customer's first name.
+  </li>
+  <li><strong>lastName</strong>: string<br>
+    A string representing the customer's last name.
+  </li>
+  <li><strong>primaryCurrency</strong>: string<br>
+    A string representing the customer's primary currency.
+  </li>
+  <li><strong>residenceCountry</strong>: string<br>
+    A string representing the customer's residence country.
+  </li>
+  <li><strong>residenceCity</strong>: string<br>
+    A string representing the customer's residence city.
+  </li>
+  <li><strong>residenceStreet</strong>: string<br>
+    A string representing the customer's residence street.
+  </li>
+  <li><strong>residenceZipCode</strong>: string<br>
+    A string representing the customer's residence zip code.
+  </li>
+  <li><strong>dateOfBirth</strong>: string<br>
+    A string representing the customer's date of birth.<br>
+    Match pattern: <code>2024-02-09T10:55:39.799Z</code>
+  </li>
+</ul>
+
+++++
+
+
+
+==== **Example body**
+
+[source,json]
+----
+{
+  "lastName": "Schmidt",
+  "firstName": "Anna",
+  "dateOfBirth": "1990-05-20T00:00:00.000Z",
+  "residenceCity": "Munich",
+  "primaryCurrency": "EUR",
+  "residenceStreet": "Examplestrasse",
+  "residenceCountry": "DEU",
+  "residenceZipCode": "12345"
+}
+----
+
+==== **Request Sample: cURL**
+
+At the time of sending the request, the curl command should be as follows:
+
+[source,curl]
+----
+curl --request PATCH \
+     --url https://api.vault.sandbox.testessential.net/v2/customer/profile \
+     --header 'accept: text/plain' \
+     --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NTU0ZDc0My05ZDExLTQ5YTEtYTMyMy03YmRmOGQ4NDdjMjEiLCJleHAiOjE3MDk3MjQ1NjQsImlhdCI6MTcwOTYzODE2NH0.deZXGfjS7oVprz2XoZseeYa7l8ti8aAJaELBeDDtglI' \
+     --header 'content-type: application/json' \
+     --data '
+{
+  "firstName": "Anna",
+  "lastName": "Schmidt",
+  "primaryCurrency": "EUR",
+  "residenceCountry": "DEU",
+  "residenceCity": "Munich",
+  "residenceStreet": "Examplestrasse",
+  "residenceZipCode": "12345",
+  "dateOfBirth": "1990-05-20T00:00:00.000Z"
+}
+'
+----
+
+== Responses
+
+.*`200 - Success Response`*
+[%collapsible.200]
+
+====
+The response status code indicates that the request was successfully processed.
+
+[IMPORTANT]
+
+The *No Content* response indicates that the request was successfully processed
+
+
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
+The response status code indicates that the requested page was not found on the server.
+
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+
+++++
+
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+====
+
+
+

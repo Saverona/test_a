@@ -1,0 +1,120 @@
+= *Finish*
+
+*`POST` /v4/kyc/ondato/finished*
+
+The endpoint is intended for completing the fourth version of the Know Your Customer (KYC) process within the Ondato system.
+
+== *Request*
+
+=== *Query Parameters*
+
+++++
+<br><ul>
+  <li><strong>platform:</strong> string<br>
+    Types of platforms.<br>
+    <ul>
+      <li><strong>Default:</strong> COMMON</li>
+    </ul>
+  </li>
+</ul>
+++++
+
+Allowed values for the field:
+
+* *COMMON*: Represents the common value.
+* *WALLETTO*: Represents the Walletto value.
+
+
+=== *Body*
+
+.Media Type: *application/json*
+
+
+++++
+<br><ul>
+  <li><strong>identificationId:</strong> string <span style="color:red">(required)</span><br>
+    IdentificationId is the same unique identifier that was obtained in the response to the <a href="start.adoc">POST v4/kyc/start</a> request.
+  </li>
+</ul>
+++++
+
+== Responses
+
+.*`200 - OK`*
+[%collapsible.200]
+
+====
+The response status code indicates that the request was successfully processed.
+
+++++
+<br><ul>
+  <li><strong>id:</strong> string<br>
+    Representing the result of completing the KYC v4 flow process for Ondato.
+  </li>
+</ul>
+
+++++
+
+**Responses example**
+[source,json]
+----
+{
+  "result": "ok"
+}
+----
+====
+
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
+The response status code indicates that the requested page was not found on the server.
+
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+
+++++
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+====
+
+

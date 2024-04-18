@@ -1,0 +1,135 @@
+= *KYC 2*
+
+*`POST` /v1/kyc/upload/document*
+
+The endpoint is used to upload documents as part of the KYC (Know Your Customer) Level 2 identity verification process, transmitting information about the required documents to confirm a user's identity.
+The process of completing KYC 2 can be read link:https://api-vault.readme.io/docs/kyc-procedure[here].
+
+
+== *Request*
+
+=== *Query Parameters*
+
+++++
+<br><ul>
+  <li><strong>docType:</strong> string <span style="color:red">(required)</span><br>
+    The type of the uploaded document.
+  </li>
+</ul>
+
+++++
+
+Allowed values for the field:
+
+[checklist]
+- [x] *PASSPORT_FRONT*: Front side of a passport document.
+- [x] *DRIVING_LICENCE_FRONT*: Front side of a driving license document.
+- [x] *ID_CARD_FRONT*: Front side of an ID card document.
+- [x] *PASSPORT_BACK*: Back side of a passport document.
+- [x] *DRIVING_LICENCE_BACK*: Back side of a driving license document.
+- [x] *ID_CARD_BACK*: Back side of an ID card document.
+- [x] *SELFIE*: Selfie photograph.
+- [x] *UTILITY_BILL*: Utility bill document.
+- [x] *BANK_STATEMENT*: Bank statement document.
+- [x] *CREDIT_CARD_STATEMENT*: Credit card statement document.
+- [x] *GOVERNMENT_CORRESPONDENCE*: Government correspondence document.
+- [x] *VIDEO_VERIFICATION*: Video verification recording.
+
+
+=== *Body*
+
+
+.Media Type: *multipart/form-data*
+
+
+==== *Parameters*
+
+++++
+<br><ul>
+  <li><strong>image:</strong> string <span style="color:red">(required)</span><br>
+    The request body containing the document image in the $binary format.
+  </li>
+</ul>
+
+++++
+
+== Responses
+
+.*`200 - OK`*
+[%collapsible.200]
+
+====
+The response status code indicates that the request was successfully processed.
+
+++++
+<br><ul>
+  <li><strong>id:</strong> string<br>
+    Upload document image.
+  </li>
+</ul>
+
+++++
+
+**Responses example**
+[source,json]
+----
+{
+  "result": "ok"
+}
+----
+====
+
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
+The response status code indicates that the requested page was not found on the server.
+
+++++
+<h4>Body</h4>
+<ul>
+  <li><strong>message</strong>: string<br>
+    Message displayed to the user.
+  </li>
+  <li><strong>field</strong>: string<br>
+    Specifies the field in the request that caused the error.
+  </li>
+  <li><strong>errorId</strong>: integer<br>
+    Identifier of the error.
+  </li>
+  <li><strong>systemId</strong>: string<br>
+    Identifier of the component.
+  </li>
+  <li><strong>originalMessage</strong>: string<br>
+    The original error message.
+  </li>
+  <li><strong>errorStackTrace</strong>: string<br>
+    The place where the error occurred in the code.
+  </li>
+  <li><strong>data</strong>: object<br>
+    Additional data related to the error, structured as key-value pairs.
+    <ul>
+      <li><strong>additionalProp1</strong>: object</li>
+      <li><strong>additionalProp2</strong>: object</li>
+      <li><strong>additionalProp3</strong>: object</li>
+    </ul>
+  </li>
+  <li><strong>error</strong>: string<br>
+    Identifier of the error.
+  </li>
+</ul>
+
+++++
+**Responses example**
+
+[source,json]
+----
+{
+  "error": "COMMON",
+  "errorId": 0,
+  "message": "Sorry for inconvenience. We're fixing the issue. If you have urgent questions, contact support",
+  "systemId": "core"
+}
+----
+====
+
+
