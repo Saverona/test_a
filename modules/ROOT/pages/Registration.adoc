@@ -1,6 +1,6 @@
 = *Registration of a new user*
 
-*`POST` v2/mobile/signup*
+*`POST` /v2/mobile/signup*
 
 This endpoint is designed for registering a new user in a mobile application or service using a phone number as the primary identifier.
 
