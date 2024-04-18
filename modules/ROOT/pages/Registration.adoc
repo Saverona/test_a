@@ -83,18 +83,14 @@ curl --request POST \
 
 == Responses
 
-[.collapsible]
+.`*200 - Success Response*`
+[%collapsible.200]
 ====
-*`200 - Success Response`*
-
 The response status code indicates that the request was successfully processed.
 
 [.collapsible-content]
-
-
 .*result*: string
 Provides information about the outcome of the registration operation.
-
 
 **Responses example**
 [source,json]
@@ -103,13 +99,12 @@ Provides information about the outcome of the registration operation.
   "result": "ok"
 }
 ----
-
 ====
 
-[.collapsible]
-====
-*`400 - Bad Request`*
 
+.*`400 - Bad Request`*
+[%collapsible.400]
+====
 The response status code indicates that the requested page was not found on the server.
 
 [.collapsible-content]
@@ -153,12 +148,14 @@ Identifier of the error.
   "systemId": "core"
 }
 ----
-
 ====
 
-[.collapsible]
+
+.*`403 - Account Duplication (Phone Number Uniqueness Check)`*
+[%collapsible.403]
+
 ====
-*`403 - Account Duplication (Phone Number Uniqueness Check)`*
+Phone Number Uniqueness Check
 
 Errors related to account duplication and phone number uniqueness check.
 
